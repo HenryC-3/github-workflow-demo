@@ -1,3 +1,7 @@
 # Add/remove 'critical' label if issue contains the words 'urgent' or 'critical'
-critical:
-    - '(critical|urgent)'
+scope:a:
+    - '\-\s\[x\]\sa'
+scope:b:
+    - '\-\s\[x\]\sb'
+scope:c:
+    - '\-\s\[x\]\sc'

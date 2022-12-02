@@ -1,22 +1,18 @@
-name: Auto Assign to Project(s)
+name: add issue to project
 
 on:
   issues:
-    types: [opened, labeled]
-  pull_request:
-    types: [opened, labeled]
-  issue_comment:
-    types: [created]
-env:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    types:
+      - opened
 
 jobs:
-  assign_one_project:
+  add-to-project:
+    name: Add issue to project
     runs-on: ubuntu-latest
-    name: Assign to One Project
     steps:
-    - name: Assign NEW issues and NEW pull requests to demo-project
-      uses: srggrs/assign-one-project-github-action@1.2.1
-      if: github.event.action == 'opened'
-      with:
-        project: https://github.com/orgs/Henry-s-Playground/projects/2
+      - uses: actions/add-to-project@v0.4.0
+        with:
+          # You can target a repository in a different organization
+          # to the issue
+          project-url: https://github.com/orgs/Henry-s-Playground/projects/2
+          github-token: ${{ secrets.ADD_TO_PROJECT_PAT }}

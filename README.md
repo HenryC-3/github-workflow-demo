@@ -7,7 +7,7 @@
 
 ## 文件结构及命名规范
 
-文件结构如下所示
+文件结构
 
 ```bash
 .
@@ -22,7 +22,7 @@
 └── README.md
 ```
 
-注意事项
+命名规范
 
 -   workflow 配置文件：部分 workflow 需要添加配置文件，将配置文件置于 `./.github/workflow-config` 下
 -   workflow 配置文件命名规范：workflow 的配置文件名与 workflow 名称保持一致
